@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
-curl --location --request POST "https://api.elmah.io/v3/sourcemaps/$INPUT_LOGID?api_key=$INPUT_APIKEY" \
---header 'Content-Type: multipart/form-data' \
---form Path=$INPUT_PATH \
---form SourceMap=$INPUT_SOURCEMAP \
---form MinifiedJavaScript=$INPUT_MINIFIEDJAVASCRIPT
+curl -X POST \
+    -F Path=$INPUT_PATH \
+    -F SourceMap=@$INPUT_SOURCEMAP;type=application/json \
+    -F MinifiedJavaScript=@$INPUT_MINIFIEDJAVASCRIPT;type=text/javascript \
+    https://api.elmah.io/v3/sourcemaps/$INPUT_LOGID?api_key=$INPUT_APIKEY
