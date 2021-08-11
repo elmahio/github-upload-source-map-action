@@ -31,7 +31,7 @@ For the full documentation check out [Source maps](https://docs.elmah.io/sourcem
 Here's an example of how to use this action:
 
 ```yml
-uses: elmahio/github-upload-sourcemap-action@v1
+uses: elmahio/github-upload-source-map-action@v1
 with:
   apiKey: ${{ secrets.ELMAH_IO_API_KEY }}
   logId: ${{ secrets.ELMAH_IO_LOG_ID }}
